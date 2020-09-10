@@ -12,9 +12,10 @@ const forecast = (lat,lon, callback)=>{
             callback('You entered invalid geocode. Please try another one...',undefined);
         }
         else{
-            const temp = body.main.temp-273.15;
-            callback(undefined,`${body.weather[0].description}. It is currently ${temp} degrees out. There is a ${body.clouds['all']}% chance of rain.`);
+            callback(undefined,`${body.weather[0].description}. It is currently ${body.main.temp-273.15}°C degrees out. There is a ${body.clouds['all']}% chance of rain. Minimum tempreture of here is
+             ${body.main.temp_min-273.15}°C and Maximum tempreture of here is ${body.main.temp_max-273.15}°C.`);
         }
+        
     })
 }
 
